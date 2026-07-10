@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main() {
+    int process[] = {1, 2, 3, 4};
+    int i;
+    printf("Process Execution Order:\n");
+    for(i = 0; i < 4; i++) {
+        printf("Process P%d is executing\n", process[i]);
+    }
+    printf("All processes completed");
+    return 0;
+}
