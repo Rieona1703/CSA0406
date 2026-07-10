@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    int memory[5] = {0};
+    int i, block;
+
+    printf("Enter block number (0-4): ");
+    scanf("%d", &block);
+
+    if(memory[block] == 0) {
+        memory[block] = 1;
+        printf("Memory Block %d Allocated\n", block);
+    } else
+        printf("Block already allocated");
+
+    return 0;
+}
