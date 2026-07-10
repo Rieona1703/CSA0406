@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main() {
+    int q[3] = {1, 2, 3}, page[] = {4, 5};
+    int i;
+    printf("Initial Pages: ");
+    for(i=0;i<3;i++)
+        printf("%d ", q[i]);
+    for(i=0;i<2;i++)
+        q[i] = page[i];
+    printf("\nAfter Replacement: ");
+    for(i=0;i<3;i++)
+        printf("%d ", q[i]);
+    return 0;
+}
