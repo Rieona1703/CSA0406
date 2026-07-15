@@ -5,12 +5,10 @@ int main() {
     pid_t pid = fork();
 
     if (pid == 0) {
-        // Child process
         printf("Executing ls -l...\n");
         execl("/bin/ls", "ls", "-l", NULL);
     }
     else {
-        // Parent process
         printf("Parent process\n");
     }
 
