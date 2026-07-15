@@ -5,8 +5,7 @@
 int main() {
     pid_t pid = fork();
 
-    if (pid == 0) {
-        // Child process
+    if (pid == 0) ;
         printf("Child Process is running\n");
     }
     else {
