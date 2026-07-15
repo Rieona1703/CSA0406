@@ -9,7 +9,6 @@ int main() {
         printf("Child Process is running\n");
     }
     else {
-        // Parent process
         wait(NULL);
         printf("Parent Process Resumed.\n");
     }
