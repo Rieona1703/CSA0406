@@ -1,0 +1,86 @@
+CO2-ASSESSMENT TOOL 3
+CSA0406-OPERATING SYSTEM 
+NAME: RIEONA J
+REG NO:192424268
+SLOT A
+
+1. Deadlock Debugging 
+Problem Identification:
+Deadlock occurs because:
+    *P1 locks R1 and waits for R2.
+    *P2 locks R2 and waits for R1.
+    *Each process holds one resource while waiting for the other, creating a circular wait.
+
+Root Cause:
+  *The deadlock is caused by the Circular Wait Condition, one of Coffman's four necessary conditions for deadlock.
+
+Optimization:
+Enforce a fixed resource allocation order.
+
+*Both processes should always lock R1 first, then R2.
+
+Modified Pseudo-code:
+Process P1:
+lock(R1)
+lock(R2)
+Critical Section
+unlock(R2)
+unlock(R1)
+
+Process P2:
+lock(R1)
+lock(R2)
+Critical Section
+unlock(R2)
+unlock(R1)
+
+
+2. CPU Utilization Problem 
+
+Problem Identification:
+  *The frequent transitions Ready → Waiting → Ready indicate that processes perform frequent I/O operations and spend little time executing on the CPU.
+
+Root Cause:
+    *Excessive I/O waiting.
+    *CPU remains idle while processes wait for I/O completion.
+
+Optimization:
+    *Use asynchronous I/O or DMA to reduce blocking.
+    *Increase the degree of multiprogramming so another process uses the CPU while one waits for I/O.
+
+Result:
+CPU utilization improves as the processor spends less time idle.
+
+
+3. Memory Bottleneck Debugging 
+
+Problem Identification:
+      *Heap = 150 MB
+      *Stack = 1 MB × 25 threads = 25 MB
+      *Frequent page faults indicate poor memory access patterns and excessive paging.
+
+Root Cause:
+Large heap usage and many threads increase memory pressure, causing frequent page faults and slowing execution.
+
+Optimizations:
+      *Reduce the number of threads by using a thread pool.
+      *Improve memory locality by optimizing data structures and increasing available RAM/cache efficiency.
+
+Result:
+Fewer page faults and improved application performance.
+
+
+4. Starvation Debugging 
+
+Problem Identification:
+Process P5 is in Q3 (FCFS) and continuously waits because higher-priority queues (Q1 and Q2) always have processes.
+
+Root Cause:
+Strict priority scheduling causes starvation of low-priority processes.
+
+Optimization:
+      1)Implement Aging, gradually increasing P5's priority.
+      2)Allocate a small portion of CPU time periodically to lower-priority queues.
+
+Result:
+Every process eventually gets CPU time, ensuring fairness.
