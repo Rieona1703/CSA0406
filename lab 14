@@ -1,0 +1,77 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char files[20][30];
+    int n, choice;
+    char name[30];
+
+    n = 0;
+
+    while (1)
+    {
+        printf("\n1. Create File");
+        printf("\n2. Delete File");
+        printf("\n3. Search File");
+        printf("\n4. Display Files");
+        printf("\n5. Exit");
+        printf("\nEnter choice: ");
+        scanf("%d", &choice);
+
+        if (choice == 1)
+        {
+            printf("Enter file name: ");
+            scanf("%s", name);
+            strcpy(files[n], name);
+            n++;
+            printf("File created successfully.\n");
+        }
+        else if (choice == 2)
+        {
+            printf("Enter file name: ");
+            scanf("%s", name);
+
+            for (int i = 0; i < n; i++)
+            {
+                if (strcmp(files[i], name) == 0)
+                {
+                    strcpy(files[i], files[n - 1]);
+                    n--;
+                    printf("File deleted successfully.\n");
+                    break;
+                }
+            }
+        }
+        else if (choice == 3)
+        {
+            printf("Enter file name: ");
+            scanf("%s", name);
+
+            int found = 0;
+            for (int i = 0; i < n; i++)
+            {
+                if (strcmp(files[i], name) == 0)
+                {
+                    found = 1;
+                    break;
+                }
+            }
+
+            if (found)
+                printf("File found.\n");
+            else
+                printf("File not found.\n");
+        }
+        else if (choice == 4)
+        {
+            printf("Files in directory:\n");
+            for (int i = 0; i < n; i++)
+                printf("%s\n", files[i]);
+        }
+        else
+            break;
+    }
+
+    return 0;
+}
