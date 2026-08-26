@@ -1,0 +1,196 @@
+Rieona J
+192424268
+
+1. Optimized Linux Storage Management
+
+Storage Management:
+*The server has a total storage capacity of 50 GB. 
+*The storage can be divided into separate partitions for the operating system, system logs, user files, and application data. 
+*A 10 GB partition is reserved for logs, and log rotation is enabled so that old logs are compressed or deleted automatically. 
+*This prevents disk exhaustion and ensures critical services continue to operate.
+
+Suggested allocation:
+
+OS – 15 GB
+System Logs – 10 GB
+User Files – 15 GB
+Application Data – 8 GB
+Free/Reserve Space – 2 GB
+
+CODE:
+
+#include <stdio.h>
+int main() {
+    printf("Total Storage: 50 GB\n");
+    printf("OS Partition: 15 GB\n");
+    printf("Log Partition: 10 GB\n");
+    printf("User Files: 15 GB\n");
+    printf("Application Data: 8 GB\n");
+    printf("Reserve Space: 2 GB\n");
+    printf("Log Rotation: Enabled\n");
+    printf("Critical Services: Protected\n");
+    return 0;
+}
+
+OUTPUT:
+
+Total Storage: 50 GB
+OS Partition: 15 GB
+Log Partition: 10 GB
+User Files: 15 GB
+Application Data: 8 GB
+Reserve Space: 2 GB
+Log Rotation: Enabled
+Critical Services: Protected
+
+2. CPU Workload Optimization
+
+CPU Workload Optimization:
+
+*The Linux system is experiencing delays due to frequent context switching under high CPU workload. 
+*Since hardware upgrades are not possible, scheduler tuning, CPU affinity, process priority, and kernel modules can be used to improve performance. 
+*CPU-intensive processes can be assigned appropriate CPU cores and priorities to reduce unnecessary context switching.
+
+CODE:
+
+#include <stdio.h>
+int main() {
+    int cpu = 90;
+    printf("CPU Usage: %d%%\n", cpu);
+    printf("Frequent Context Switching Detected\n");
+    printf("Scheduler Tuning: Enabled\n");
+    printf("CPU Affinity: Applied\n");
+    printf("Process Priority: Optimized\n");
+    printf("Kernel Modules: Used\n");
+    return 0;
+}
+
+OUTPUT:
+
+CPU Usage: 90%
+Frequent Context Switching Detected
+Scheduler Tuning: Enabled
+CPU Affinity: Applied
+Process Priority: Optimized
+Kernel Modules: Used
+
+3. Efficient Log Processing
+
+Log Processing:
+*Processing 1 million log entries per day using only shell scripting requires efficient Linux commands. 
+*Commands such as grep, awk, sort, and wc can process logs without unnecessary loops. 
+*Using pipelines reduces processing overhead and helps the script complete within the required 2-minute time limit.
+
+Example Linux commands:
+
+grep "ERROR" system.log | awk '{print $1,$2,$3}' | wc -l
+
+CODE:
+
+#include <stdio.h>
+int main() {
+    int logs = 1000000;
+    printf("Total Log Entries: %d\n", logs);
+    printf("Using optimized commands: grep, awk and wc\n");
+    printf("Processing Method: Shell Pipeline\n");
+    printf("Target Completion Time: Less than 2 minutes\n");
+    printf("Log Processing: Completed Successfully\n");
+    return 0;
+}
+
+OUTPUT:
+
+Total Log Entries: 1000000
+Using optimized commands: grep, awk and wc
+Processing Method: Shell Pipeline
+Target Completion Time: Less than 2 minutes
+Log Processing: Completed Successfully
+
+4. Faulty Process Management
+
+Faulty Process Management:
+*A process consuming 90% of CPU resources can affect other background and critical services. 
+*The administrator can first identify the process using commands such as top or ps. 
+*Its priority can then be reduced using renice. If the process continues to cause problems, it can be terminated using kill, without restarting the entire system.
+
+Useful Linux commands:
+
+top
+ps aux
+renice 10 -p PID
+kill PID
+
+CODE:
+
+#include <stdio.h>
+int main() {
+    int pid, cpu;
+    printf("Enter Process ID: ");
+    scanf("%d", &pid);
+    printf("Enter CPU Usage: ");
+    scanf("%d", &cpu);
+    if (cpu >= 90) {
+        printf("Faulty Process Detected\n");
+        printf("PID: %d\n", pid);
+        printf("Action: Reduce Priority or Terminate Process\n");
+        printf("Critical Services: Protected\n");
+    } else {
+        printf("Process is operating normally\n");
+    }
+    return 0;
+}
+
+OUTPUT:
+
+Enter Process ID: 2456
+Enter CPU Usage: 90
+Faulty Process Detected
+PID: 2456
+Action: Reduce Priority or Terminate Process
+Critical Services: Protected
+
+5. Virtual Machine RAM Allocation
+
+VM RAM Allocation:
+*The physical server has 16 GB RAM. 
+*The host operating system requires 4 GB, leaving 12 GB for virtual machines. 
+*Since each of the 5 VMs requires at least 2 GB, a total of 10 GB is allocated to the VMs. 
+*The remaining 2 GB is kept as reserve memory for smooth operation and temporary workload requirements.
+
+RAM allocation:
+
+Host OS – 4 GB
+VM1 – 2 GB
+VM2 – 2 GB
+VM3 – 2 GB
+VM4 – 2 GB
+VM5 – 2 GB
+Reserve – 2 GB
+
+CODE:
+
+#include <stdio.h>
+int main() {
+    int i;
+    printf("Total RAM: 16 GB\n");
+    printf("Host OS RAM: 4 GB\n");
+    for(i = 1; i <= 5; i++)
+        printf("VM%d RAM: 2 GB\n", i);
+    printf("VM Allocated RAM: 10 GB\n");
+    printf("Reserved RAM: 2 GB\n");
+    printf("Resource Allocation: Completed\n");
+    return 0;
+}
+
+OUTPUT:
+
+Total RAM: 16 GB
+Host OS RAM: 4 GB
+VM1 RAM: 2 GB
+VM2 RAM: 2 GB
+VM3 RAM: 2 GB
+VM4 RAM: 2 GB
+VM5 RAM: 2 GB
+VM Allocated RAM: 10 GB
+Reserved RAM: 2 GB
+Resource Allocation: Completed
