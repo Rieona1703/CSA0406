@@ -1,0 +1,106 @@
+Rieona J
+192424268
+
+1. File System Space Management
+
+Pseudocode:
+
+BEGIN
+    SET threshold = 80%
+    usage = GET_DISK_USAGE()
+    IF usage > threshold THEN
+        GET all log files
+        SORT log files by size DESCENDING
+        FOR each log file DO
+            IF log file is old THEN
+                COMPRESS or ROTATE log file
+            ENDIF
+            usage = GET_DISK_USAGE()
+            IF usage <= threshold THEN
+                BREAK
+            ENDIF
+        ENDFOR
+    ENDIF
+    DISPLAY current disk usage
+END
+
+2. Priority-Based CPU Scheduling
+
+Pseudocode:
+
+BEGIN
+    INPUT process_list
+    WHILE process_list is NOT EMPTY DO
+        SORT processes by priority DESCENDING
+        SELECT process with highest priority
+        ALLOCATE CPU to selected process
+        EXECUTE process
+        IF process is completed THEN
+            REMOVE process from list
+        ELSE
+            LOWER its priority
+            ADD process back to list
+        ENDIF
+    ENDWHILE
+    DISPLAY "All processes completed"
+END
+
+3. RAM Allocation for Virtual Machines
+
+Pseudocode:
+
+BEGIN
+    SET total_RAM = 16 GB
+    SET reserved_RAM = 4 GB
+    SET available_RAM = total_RAM - reserved_RAM
+    SET minimum_RAM = 2 GB
+    INPUT number_of_VMs
+    FOR each VM DO
+        IF available_RAM >= minimum_RAM THEN
+            ALLOCATE minimum_RAM to VM
+            available_RAM = available_RAM - minimum_RAM
+        ELSE
+            DISPLAY "Insufficient RAM"
+        ENDIF
+    ENDFOR
+    DISPLAY available_RAM
+END
+
+4. Hypervisor Selection
+
+Pseudocode:
+
+BEGIN
+    INPUT performance
+    INPUT budget
+    INPUT hardware_access
+    IF performance = HIGH AND hardware_access = TRUE THEN
+        SELECT Type 1 Hypervisor
+    ELSE IF budget = LOW THEN
+        SELECT Type 2 Hypervisor
+    ELSE
+        SELECT Type 1 Hypervisor
+    ENDIF
+    DISPLAY selected hypervisor
+END
+
+5. CPU and Memory Resource Management
+
+Pseudocode:
+
+BEGIN
+    INPUT application_list
+    FOR each application DO
+        CREATE resource group
+        SET CPU limit
+        SET memory limit
+        ASSIGN application to resource group
+    ENDFOR
+    MONITOR CPU and memory usage
+    IF application exceeds its limit THEN
+        THROTTLE CPU usage
+        LIMIT memory usage
+    ENDIF
+
+    DISPLAY "Resource limits applied"
+END
